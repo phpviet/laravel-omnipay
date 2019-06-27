@@ -1,0 +1,55 @@
+{
+    "name": "phpviet/laravel-omnipay",
+    "description": "Laravel Omnipay hổ trợ tích hợp các cổng thanh toán trong nước.",
+    "keywords": [
+        "phpviet",
+        "laravel-omnipay",
+        "omnipay",
+        "vietnam-payment-gateways",
+        "payment-gateways"
+    ],
+    "homepage": "https://github.com/phpviet/laravel-omnipay",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vuong Xuong Minh",
+            "email": "vuongxuongminh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "ignited/laravel-omnipay": "^3.0",
+        "illuminate/support": "^5.7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.7",
+        "phpunit/phpunit": "~7.5",
+        "scrutinizer/ocular": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPViet\\Laravel\\Omnipay\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPViet\\Laravel\\Omnipay\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "\"vendor/bin/phpunit\""
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "PHPViet\\Laravel\\Omnipay\\OmnipayServiceProvider"
+            ]
+        }
+	}
+}
