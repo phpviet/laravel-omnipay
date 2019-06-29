@@ -21,6 +21,6 @@ class QRCodeGateway extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return static::$app['omnipay']->gateway('momo_qrcode');
+        return static::$app['omnipay']->gateway('MoMoQRCode');
     }
 }

@@ -21,6 +21,6 @@ class InternationalGateway extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return static::$app['omnipay']->gateway('onepay_international');
+        return static::$app['omnipay']->gateway('OnePayInternational');
     }
 }

@@ -21,6 +21,6 @@ class DomesticGateway extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return static::$app['omnipay']->gateway('onepay_domestic');
+        return static::$app['omnipay']->gateway('OnePayDomestic');
     }
 }

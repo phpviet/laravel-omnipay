@@ -21,6 +21,6 @@ class AppInAppGateway extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return static::$app['omnipay']->gateway('momo_apa');
+        return static::$app['omnipay']->gateway('MoMoAIA');
     }
 }

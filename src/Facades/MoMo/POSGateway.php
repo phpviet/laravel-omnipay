@@ -21,6 +21,6 @@ class POSGateway extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return static::$app['omnipay']->gateway('momo_pos');
+        return static::$app['omnipay']->gateway('MoMoPOS');
     }
 }

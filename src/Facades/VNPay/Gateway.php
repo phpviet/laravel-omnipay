@@ -21,6 +21,6 @@ class Gateway extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return static::$app['omnipay']->gateway('vnpay');
+        return static::$app['omnipay']->gateway('VNPay');
     }
 }

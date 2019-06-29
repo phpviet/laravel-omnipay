@@ -15,6 +15,6 @@ class AllInOneGateway extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return static::$app['omnipay']->gateway('momo_aio');
+        return static::$app['omnipay']->gateway('MoMoAIO');
     }
 }
