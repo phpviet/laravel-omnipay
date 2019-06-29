@@ -19,7 +19,11 @@
     "require": {
         "php": "^7.1",
         "ignited/laravel-omnipay": "^3.0",
-        "illuminate/support": "^5.7"
+        "illuminate/support": "^5.7",
+        "jackiedo/omnipay-onepay": "^1.0",
+        "jackiedo/omnipay-vnpay": "^1.0",
+        "jackiedo/omnipay-vtcpay": "^1.0",
+        "phpviet/omnipay-momo": "^1.0"
     },
     "require-dev": {
         "orchestra/testbench": "^3.7",
@@ -51,5 +55,5 @@
                 "PHPViet\\Laravel\\Omnipay\\OmnipayServiceProvider"
             ]
         }
-	}
+    }
 }
