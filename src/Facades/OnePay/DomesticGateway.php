@@ -8,13 +8,16 @@
 
 namespace PHPViet\Laravel\Omnipay\Facades\OnePay;
 
-use Illuminate\Support\Facades\Facade;
-
 /**
+ * @method static \Omnipay\OnePay\Message\DomesticPurchaseRequest purchase(array $options = [])
+ * @method static \Omnipay\OnePay\Message\DomesticCompletePurchaseRequest completePurchase(array $options = [])
+ * @method static \Omnipay\OnePay\Message\DomesticCompletePurchaseRequest notification(array $options = [])
+ * @method static \Omnipay\OnePay\Message\DomesticFetchCheckoutRequest queryTransaction(array $options = [])
+ *
  * @author Vuong Minh <vuongxuongminh@gmail.com>
  * @since 1.0.0
  */
-class DomesticGateway extends Facade
+class DomesticGateway extends Gateway
 {
     /**
      * {@inheritdoc}
