@@ -51,6 +51,16 @@
             "dev-master": "1.0-dev"
         },
         "laravel": {
+            "aliases": {
+                "MoMoAIO": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\AllInOneGateway",
+                "MoMoAIA": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\AppInAppGateway",
+                "MoMoPOS": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\POSGateway",
+                "MoMoQRCode": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\QRCodeGateway",
+                "OnePayDomestic": "PHPViet\\Laravel\\Omnipay\\Facades\\OnePay\\DomesticGateway",
+                "OnePayInternational": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\InternationalGateway",
+                "VNPay": "PHPViet\\Laravel\\Omnipay\\Facades\\VNPay\\Gateway",
+                "VTCPay": "PHPViet\\Laravel\\Omnipay\\Facades\\VTCPay\\Gateway"
+            },
             "providers": [
                 "PHPViet\\Laravel\\Omnipay\\OmnipayServiceProvider"
             ]
