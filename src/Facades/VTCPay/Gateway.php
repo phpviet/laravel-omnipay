@@ -28,16 +28,16 @@ class Gateway extends Facade
     }
 
     /**
-     * Create a request to accept notification.
+     * Tạo yêu cầu truy vấn notification từ VTCPay.
      *
-     * This is an alias of [[acceptNotification()]] for sync with style standard of another gateway.
+     * Đây là phương thức ánh xạ của [[acceptNotification()]] với mục đích đồng bộ các phương thức so với các cổng thanh toán khác.
      *
      * @param  array  $options
      *
      * @return \Omnipay\VtcPay\Message\AcceptNotificationRequest
      */
-    public function notification(array $options = [])
+    public static function notification(array $options = [])
     {
-        return static::getFacadeAccessor()->acceptNotification($options);
+        return static::getFacadeAccessor()::acceptNotification($options);
     }
 }
