@@ -26,4 +26,3 @@ class AllInOneGatewayTest extends FacadeGatewayTestCase
         return '\MoMoAIO';
     }
 }
-
