@@ -9,6 +9,7 @@
 namespace PHPViet\Laravel\Omnipay\Facades\VTCPay;
 
 use Illuminate\Support\Facades\Facade;
+use Omnipay\VTCPay\Gateway as VTCPayGateway;
 
 /**
  * @method static \Omnipay\VTCPay\Message\PurchaseRequest purchase(array $options = [])
@@ -23,7 +24,7 @@ class Gateway extends Facade
     /**
      * {@inheritdoc}
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): VTCPayGateway
     {
         return static::$app['omnipay']->gateway('VTCPay');
     }

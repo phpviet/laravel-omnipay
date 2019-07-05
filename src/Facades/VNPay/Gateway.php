@@ -9,6 +9,7 @@
 namespace PHPViet\Laravel\Omnipay\Facades\VNPay;
 
 use Illuminate\Support\Facades\Facade;
+use Omnipay\VNPay\Gateway as VNPayGateway;
 
 /**
  * @method static \Omnipay\VNPay\Message\PurchaseRequest purchase(array $options = [])
@@ -25,7 +26,7 @@ class Gateway extends Facade
     /**
      * {@inheritdoc}
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): VNPayGateway
     {
         return static::$app['omnipay']->gateway('VNPay');
     }

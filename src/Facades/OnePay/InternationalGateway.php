@@ -9,6 +9,7 @@
 namespace PHPViet\Laravel\Omnipay\Facades\OnePay;
 
 use Illuminate\Support\Facades\Facade;
+use Omnipay\OnePay\InternationalGateway as OnePayGateway;
 
 /**
  * @method static \Omnipay\OnePay\Message\International\PurchaseRequest purchase(array $options = [])
@@ -24,7 +25,7 @@ class InternationalGateway extends Facade
     /**
      * {@inheritdoc}
      */
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): OnePayGateway
     {
         return static::$app['omnipay']->gateway('OnePayInternational');
     }
