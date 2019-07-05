@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPViet\Laravel\Omnipay\Facades;
+namespace PHPViet\Laravel\Omnipay\Facades\MoMo;
 
 use Illuminate\Support\Facades\Facade;
 
