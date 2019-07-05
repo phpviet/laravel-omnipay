@@ -16,10 +16,50 @@
 
 ## Thông tin
 
-Laravel Omnipay hổ trợ tích hợp các cổng thanh toán trong nước dựa trên nền tảng [Omnipay League](https://github.com/thephpleague/omnipay).
+Hiện nay các cổng thanh toán trong nước có cấu trúc API rất đa dạng và ít có điểm chung, 
+khiến cho việc chúng ta xây dựng các api-client cũng gặp nhiều khó khăn, 
+chính vì vậy package này được sinh ra nhằm đồng bộ các phương thức của các cổng thanh toán, 
+giúp cho việc tích hợp sẽ dễ dàng hơn, nó được thiết kế trên nền tảng [Omnipay](https://omnipay.thephpleague.com/) 
+giúp bạn tối giản lại các tham trị khi tạo request gửi lên các cổng thanh toán. 
+Do tất cả các cổng thanh toán đều có phương thức chung nên nó sẽ giúp cho bạn chuyển tiếp từ cổng thanh toán này sang cổng thanh toán khác đơn giản hơn.
 
-Để nắm sơ lược về khái niệm và cách sử dụng các **Omnipay** gateways bạn hãy truy cập vào [đây](https://omnipay.thephpleague.com/) 
-để kham khảo.
+Ví dụ:
+```php
+\MoMoAIO::purchase([
+    'amount' => 20000,
+    'returnUrl' => 'https://github.com/phpviet',
+    'notifyUrl' => 'https://github.com/phpviet',
+    'orderId' => 'Mã đơn hàng',
+    'requestId' => 'Mã request id, gợi ý nên xài uuid4',
+])->send();
+
+
+\OnePayDomestic::purchase([
+    'AgainLink' => 'https://github.com/phpviet',
+    'vpc_MerchTxnRef' => microtime(false),
+    'vpc_ReturnURL' => 'https://github.com/phpviet',
+    'vpc_TicketNo' => '127.0.0.1',
+    'vpc_Amount' => '200000',
+    'vpc_OrderInfo' => 456,
+])->send();
+
+\VNPay::purchase([
+    'vnp_TxnRef' => time(),
+    'vnp_OrderType' => 100000,
+    'vnp_OrderInfo' => time(),
+    'vnp_IpAddr' => '127.0.0.1',
+    'vnp_Amount' => 1000000,
+    'vnp_ReturnUrl' => 'https://github.com/phpviet',
+])->send();
+
+\VTCPay::purchase([
+    'receiver_account' => '0963465816',
+    'reference_number' => microtime(false),
+    'amount' => 50000,
+    'url_return' => 'https://phpviet.org'
+])->send();
+
+```
 
 Các cổng thanh toán đang được hổ trợ tích hợp:
 
@@ -27,6 +67,7 @@ Các cổng thanh toán đang được hổ trợ tích hợp:
 + **[OnePay](https://onepay.vn)**
 + **[VNPay](https://vnpay.vn)**
 + **[VTCPay](https://vtcpay.vn)**
+
 
 ## Cài đặt
 
