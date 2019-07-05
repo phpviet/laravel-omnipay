@@ -20,9 +20,9 @@
         "php": "^7.1",
         "ignited/laravel-omnipay": "^3.0",
         "illuminate/support": "^5.7",
-        "jackiedo/omnipay-onepay": "^1.0",
-        "jackiedo/omnipay-vnpay": "^1.0",
-        "jackiedo/omnipay-vtcpay": "^1.0",
+        "phpviet/omnipay-onepay": "^1.0",
+        "phpviet/omnipay-vnpay": "^1.0",
+        "phpviet/omnipay-vtcpay": "^1.0",
         "phpviet/omnipay-momo": "^1.0"
     },
     "require-dev": {
@@ -57,7 +57,7 @@
                 "MoMoPOS": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\POSGateway",
                 "MoMoQRCode": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\QRCodeGateway",
                 "OnePayDomestic": "PHPViet\\Laravel\\Omnipay\\Facades\\OnePay\\DomesticGateway",
-                "OnePayInternational": "PHPViet\\Laravel\\Omnipay\\Facades\\MoMo\\InternationalGateway",
+                "OnePayInternational": "PHPViet\\Laravel\\Omnipay\\Facades\\OnePay\\InternationalGateway",
                 "VNPay": "PHPViet\\Laravel\\Omnipay\\Facades\\VNPay\\Gateway",
                 "VTCPay": "PHPViet\\Laravel\\Omnipay\\Facades\\VTCPay\\Gateway"
             },
