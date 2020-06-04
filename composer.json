@@ -18,17 +18,15 @@
     ],
     "require": {
         "php": "^7.1",
-        "ignited/laravel-omnipay": "^3.0",
-        "illuminate/support": "^5.7",
+        "ignited/laravel-omnipay": "^3.2",
+        "illuminate/support": "^5.7 || ^6.0 || ^7.0",
         "phpviet/omnipay-onepay": "^1.0",
         "phpviet/omnipay-vnpay": "^1.0",
         "phpviet/omnipay-vtcpay": "^1.0",
         "phpviet/omnipay-momo": "^1.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.7",
-        "phpunit/phpunit": "~7.5",
-        "scrutinizer/ocular": "^1.5"
+        "orchestra/testbench": "^3.7 || ^4.0 || ^5.0"
     },
     "autoload": {
         "psr-4": {
