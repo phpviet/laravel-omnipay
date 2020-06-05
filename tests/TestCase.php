@@ -8,9 +8,9 @@
 
 namespace PHPViet\Laravel\Omnipay\Tests;
 
+use Ignited\LaravelOmnipay\LaravelOmnipayServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use PHPViet\Laravel\Omnipay\OmnipayServiceProvider;
-use Ignited\LaravelOmnipay\LaravelOmnipayServiceProvider;
 
 /**
  * @author Vuong Minh <vuongxuongminh@gmail.com>
