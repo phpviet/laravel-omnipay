@@ -23,7 +23,7 @@ class CompletePurchaseMiddleware
      * @param \Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next, string $gateway, $successHandle, $failureHandle = null)
+    public function handle($request, Closure $next, string $gateway, $failureHandle = null)
     {
         /** @var AbstractGateway $gateway */
         $gateway = app('omnipay')->gateway($gateway);
@@ -34,14 +34,16 @@ class CompletePurchaseMiddleware
 
         $response = $gateway->completePurchase()->send();
 
-        if ($response->isSuccessful()) {
-            return app()->call($successHandle, [$response]);
+        $request->attributes->set('completePurchaseResponse', $response);
+
+        if (!$response->isSuccessful()) {
+            if ($failureHandle) {
+                return app()->call($failureHandle, [$response]);
+            }
+
+            throw new BadRequestHttpException('Bad request');
         }
 
-        if ($failureHandle) {
-            return app()->call($failureHandle, [$response]);
-        }
-
-        throw new BadRequestHttpException('Bad request');
+        return $next($request);
     }
 }
