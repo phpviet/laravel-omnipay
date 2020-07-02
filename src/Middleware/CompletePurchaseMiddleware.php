@@ -6,7 +6,7 @@
  * @license [MIT](https://opensource.org/licenses/MIT)
  */
 
-namespace PHPViet\Laravel\Omnipay\Middlewares;
+namespace PHPViet\Laravel\Omnipay\Middleware;
 
 use Closure;
 use Omnipay\Common\AbstractGateway;
