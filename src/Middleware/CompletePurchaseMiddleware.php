@@ -29,7 +29,7 @@ class CompletePurchaseMiddleware
         /** @var AbstractGateway $gateway */
         $gateway = app('omnipay')->gateway($gateway);
 
-        if (!$gateway->supportsCompletePurchase()) {
+        if (! $gateway->supportsCompletePurchase()) {
             throw new \InvalidArgumentException('Gateway configured not support complete purchase method!');
         }
 
