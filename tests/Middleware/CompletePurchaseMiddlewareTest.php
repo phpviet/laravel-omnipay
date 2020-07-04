@@ -20,7 +20,6 @@ use PHPViet\Laravel\Omnipay\Tests\TestCase;
  */
 class CompletePurchaseMiddlewareTest extends TestCase
 {
-
     public function getEnvironmentSetUp($app): void
     {
         $_GET['partnerCode'] = 'test';
