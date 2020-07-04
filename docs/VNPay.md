@@ -47,6 +47,9 @@ if ($response->isSuccessful()) {
 }
 ```
 
+Hoặc bạn có thể sử dụng `PHPViet\Laravel\Omnipay\Middleware\CompletePurchaseMiddleware` để giảm bớt nghiệp vụ xử lý kiểm tra tính hợp lệ 
+của request, xem thêm tại [đây](common/CompletePurchaseMiddleware.md).
+
 Kham khảo thêm các tham trị khi VNPay trả về tại [đây](https://sandbox.vnpayment.vn/apis/docs/huong-dan-tich-hop/#code-returnurl).
 
 ### Kiểm tra thông tin `IPN` do VNPay gửi sang:
