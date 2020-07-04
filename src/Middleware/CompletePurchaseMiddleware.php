@@ -10,7 +10,7 @@ namespace PHPViet\Laravel\Omnipay\Middleware;
 
 use Closure;
 use Omnipay\Common\AbstractGateway;
-use Omnipay\Common\Exception\InvalidRequestException;
+use Omnipay\Common\Exception\OmnipayException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -35,7 +35,7 @@ class CompletePurchaseMiddleware
 
         try {
             $response = $gateway->completePurchase()->send();
-        } catch (InvalidRequestException $e) {
+        } catch (OmnipayException $e) {
             throw new BadRequestHttpException($e->getMessage());
         }
 

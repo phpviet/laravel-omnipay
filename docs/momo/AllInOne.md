@@ -44,6 +44,9 @@ if ($response->isSuccessful()) {
 }
 ```
 
+Hoặc bạn có thể sử dụng `PHPViet\Laravel\Omnipay\Middleware\CompletePurchaseMiddleware` để giảm bớt nghiệp vụ xử lý kiểm tra tính hợp lệ 
+của request, xem thêm tại [đây](../common/CompletePurchaseMiddleware.md).
+
 Kham khảo thêm các tham trị khi MoMo trả về tại [đây](https://developers.momo.vn/#/docs/aio/?id=th%c3%b4ng-tin-tham-s%e1%bb%91).
 
 ### Kiểm tra thông tin `notifyUrl` do MoMo gửi sang:

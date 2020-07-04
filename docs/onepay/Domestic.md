@@ -44,6 +44,9 @@ if ($response->isSuccessful()) {
 }
 ```
 
+Hoặc bạn có thể sử dụng `PHPViet\Laravel\Omnipay\Middleware\CompletePurchaseMiddleware` để giảm bớt nghiệp vụ xử lý kiểm tra tính hợp lệ 
+của request, xem thêm tại [đây](../common/CompletePurchaseMiddleware.md).
+
 Kham khảo thêm các tham trị khi OnePay trả về tại [đây](https://mtf.onepay.vn/developer/resource/documents/docx/quy_trinh_tich_hop-noidia.pdf).
 
 ### Kiểm tra thông tin `IPN` do OnePay gửi sang:
