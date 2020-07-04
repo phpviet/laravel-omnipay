@@ -10,6 +10,7 @@ namespace PHPViet\Laravel\Omnipay\Middleware;
 
 use Closure;
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Common\Exception\InvalidRequestException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -23,7 +24,7 @@ class CompletePurchaseMiddleware
      * @param \Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next, string $gateway, $failureHandle = null)
+    public function handle($request, Closure $next, string $gateway)
     {
         /** @var AbstractGateway $gateway */
         $gateway = app('omnipay')->gateway($gateway);
@@ -32,17 +33,13 @@ class CompletePurchaseMiddleware
             throw new \InvalidArgumentException('Gateway configured not support complete purchase method!');
         }
 
-        $response = $gateway->completePurchase()->send();
+        try {
+            $response = $gateway->completePurchase()->send();
+        } catch (InvalidRequestException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
 
         $request->attributes->set('completePurchaseResponse', $response);
-
-        if (!$response->isSuccessful()) {
-            if ($failureHandle) {
-                return app()->call($failureHandle, [$response]);
-            }
-
-            throw new BadRequestHttpException('Bad request');
-        }
 
         return $next($request);
     }
