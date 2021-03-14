@@ -2,6 +2,10 @@
 
 Tất cả lịch sử tiến trình phát triển thư viện
 
+### 1.1.2
+
++ Nâng cấp composer package `ignited/laravel-omnipay` lên phiên bản tối thiểu 3.3.
+
 ### 1.1.1
 
 + Hổ trợ Laravel 8.
